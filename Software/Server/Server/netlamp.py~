@@ -41,8 +41,8 @@ def make(w):
 #def i2():
 #    return open("index2.html").read()
 
-import pwmInterface.Arduino as Arduino
-p = Arduino.PWM("/dev/ttyACM0")
+import pwmInterface.Arduino.PWM as PWM
+p = PWM.PWM("/dev/ttyACM0")
 
 if __name__ == "__main__":
     #GPIO.setmode(GPIO.BOARD)
