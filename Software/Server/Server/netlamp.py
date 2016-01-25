@@ -7,6 +7,11 @@ app = Flask(__name__)
 
 HELLIGKEIT = 50
 
+try:
+    HELLIGKEIT = int(open("helligkeit.txt").read())
+except:
+    open("helligkeit.txt", "w").write(str(HELLIGKEIT))
+
 @app.route("/")
 def hello():
     return open("index2.html").read()
@@ -18,6 +23,7 @@ def plus(w):
     if HELLIGKEIT > 100:
         HELLIGKEIT = 100
     p.ChangeDutyCycle(HELLIGKEIT)
+    open("helligkeit.txt", "w").write(str(HELLIGKEIT))
     return str(HELLIGKEIT)
 
 @app.route("/api/-/<int:w>")
@@ -27,6 +33,7 @@ def minus(w):
     if HELLIGKEIT < 0:
         HELLIGKEIT = 0
     p.ChangeDutyCycle(HELLIGKEIT)
+    open("helligkeit.txt", "w").write(str(HELLIGKEIT))
     return str(HELLIGKEIT)
     
 @app.route("/api/=/<int:w>")
@@ -35,6 +42,7 @@ def make(w):
     if 0 <= w <= 100:
         HELLIGKEIT = w
     p.ChangeDutyCycle(HELLIGKEIT)
+    open("helligkeit.txt", "w").write(str(HELLIGKEIT))
     return str(HELLIGKEIT)
 
 #@app.route("/2")
