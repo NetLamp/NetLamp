@@ -1,7 +1,5 @@
 from wsgiref.handlers import CGIHandler
-from netlamp import app, p, INIT
-
-INIT()
+from netlamp import app
 
 try:
     CGIHandler().run(app)

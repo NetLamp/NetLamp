@@ -41,15 +41,8 @@ def make(w):
 #def i2():
 #    return open("index2.html").read()
 
-p = None
-
-def INIT(serial="/dev/ttyACM0"):
-    global p
-
-    import ArduinoPWM as PWM
-    
-    p = PWM.PWM("/dev/ttyACM0")
-    p.start(HELLIGKEIT)
+import pwmInterface.Arduino.PWM as PWM
+p = PWM.PWM("/dev/ttyACM0")
 
 if __name__ == "__main__":
     #GPIO.setmode(GPIO.BOARD)
@@ -57,11 +50,5 @@ if __name__ == "__main__":
     
     #p = GPIO.PWM(PIN, 50)
     #p.start(HELLIGKEIT)
-
-    INIT()
-
-    try:
-        app.run(host='')
-    except:
-        p.stop()
+    app.run(host='')
     

@@ -4,10 +4,11 @@ class PWM(object):
     CALLIBRATION = 255
 
     def __init__(self, port="/dev/ttyACM0"):
-        self.con = serial.Serial(port)
+        self.port = port
 
     def start(self, duty):
-        self.con.write(chr(int(self.CALLIBRATION*(duty/100.))))
+        with serial.Serial(self.port) as con:
+            con.write(chr(int(self.CALLIBRATION*(duty/100.))))
 
     def ChangeDutyCycle(self, duty):
         self.start(duty)
