@@ -1,6 +1,9 @@
 from flask import Flask
 app = Flask(__name__)
 
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), "Libs"))
+
 #import RPi.GPIO as GPIO
 
 #PIN = 13
