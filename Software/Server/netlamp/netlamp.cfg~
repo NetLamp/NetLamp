@@ -1,0 +1,68 @@
+[Sicherheit]
+# Sicherheit des Server
+
+######################################
+# Festlegung der UPnP-Einstellung
+# Möglich sind: an / gesichert / aus
+#  - an: (nicht empfohlen: SICHERHEITSRISIKO!)
+#     UPnP immer versuchen zu verwenden
+#  - aus:
+#     Niemals UPnP verwenden
+#  - gesichert:
+#     UPnP nur verwenden, wenn Passwort und HTTPS
+#     verwendet werden
+#
+# Standart:
+#  - UPnP = aus (empfohlen)
+#
+UPnP = aus
+
+######################################
+# Einstellung ob Passwörter erzungen werden sollen
+# Möglich sind: ja / admin / nein
+#  - ja:
+#     Passwörter erzwingen
+#  - admin:
+#     Passwörter sind nur für die Administrationsoberfläche erforderlich
+#  - nein: (nicht empfohlen: SICHERHEITSRISIKO!)
+#     UPnP nur verwenden, wenn Passwort und HTTPS
+#     verwendet werden
+#
+# Standart:
+#  - PasswortZwang = admin
+# Empfohlen (höchste Sicherheit):
+#  - PasswortZwang = ja
+#
+PasswortZwang = admin
+
+
+[PWM]
+# PWM-Einstellungen
+
+######################################
+# Auswahl des PWM-Providers
+# Möglich sind: Arduino / RaspberryPi
+#  - Arduino:
+#     einen externen Arduino über die serielle Schinttstelle verwenden
+#  - RaspberryPi:
+#     GPIOs des Raspberry Pis verwenden
+#
+# Standart:
+#  - Provider = Arduino
+#
+# Hinweis: Teilweise sind die PWM-Signale des Raspberry Pis instabil!
+Provider = Arduino
+
+######################################
+# Festlegung des seriellen Anschlusses des Arduinos
+# Möglich sind: <Port> (z.B. COM1, /dev/ttyACM0, ...) / auto
+# - auto:
+#    Automatische Erkennung
+#
+# Standart:
+#  - Port = auto
+#
+# Empfohlen:
+#  - Port = auto
+Port = Auto
+
