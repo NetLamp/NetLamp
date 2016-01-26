@@ -1,2 +1,4 @@
 flask
-pyserial
+argon2_cffi
+pyserial [Arduino]
+RPi.GPIO [RaspberryPi]
