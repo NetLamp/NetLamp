@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# ~*~ Encoding: UTF-8 ~*~
+
 from flask import Flask
 import sys, os
 
