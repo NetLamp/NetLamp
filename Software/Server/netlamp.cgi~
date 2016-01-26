@@ -9,7 +9,7 @@ import os
 ### Außerdem: http://flask.pocoo.org/docs/0.10/deploying/cgi/#server-setup
 
 from wsgiref.handlers import CGIHandler
-from netlamp.app import app
+from netlamp import app
 
 try:
     CGIHandler().run(app)
